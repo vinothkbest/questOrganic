@@ -1,0 +1,86 @@
+.carousel-inner {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	padding-top: 40%;
+	display: block;
+	content: "";
+}
+.carousel-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: skyblue;
+	background: no-repeat center;
+	background-size: cover;
+}
+.caption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+	width: 60%;
+	z-index: 9;
+	margin-top: 20px;
+	text-align: center;
+}
+.caption h1 {
+    color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.caption h2 {
+  color: rgba(255,255,255,.75);
+	font-size: 18px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+a.big-button {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 20px 10px;
+	border-radius: 3px;
+	margin-top: 40px;
+	margin-bottom: 0;
+	display: inline-block;
+	background: rgba(255, 0, 0, 0.9);
+}
+a.big-button:hover {
+	text-decoration: none;
+}
+
+.carousel-indicators .active {
+  background: #fff;
+}
+.carousel-indicators li {
+  background: rgba(255, 255, 255, 0.4);
+  border-top: 10px solid;
+  z-index: 15;
+}
+
+@media only screen and (max-device-width: 778px) and (min-device-width: 458px) {
+    .carousel-inner {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		padding-top: 60%;
+		display: block;
+		content: "";
+	}
+}
+
+@media only screen and (max-width: 458px) {
+    .carousel-inner {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		padding-top: 110%;
+		display: block;
+		content: "";
+	}
+}

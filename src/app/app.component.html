@@ -1,0 +1,22 @@
+<!-- Start Header -->
+<header>
+  <app-menu></app-menu>
+  <app-banner *ngIf="currentRouter=='/'"></app-banner>
+</header>
+<!-- End Header -->
+<!-- Start Content -->
+<main>  
+  <div class="container">    
+      <div class="content" [@routerFadeIn]="animateRouteing(outlet)">
+          <router-outlet #outlet='outlet' (activate)=pagingAnimate()></router-outlet>
+      </div>
+  </div>
+</main>
+<!-- End Content -->
+
+<!--Start Footer -->
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+<!--End Footer -->

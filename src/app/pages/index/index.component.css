@@ -1,0 +1,25 @@
+.products{
+    display: flex;
+    justify-content: space-around;
+    gap:20px
+}
+.separator{
+    display:flex;
+    align-items: center;
+}
+
+.separator .line{
+    height: 5px;
+    flex: 1;
+    background-color:rgb(77, 143, 151);
+}
+
+.separator h2{
+    padding: 0 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .products{
+        flex-direction: column;
+    }
+}

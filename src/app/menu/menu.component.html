@@ -1,0 +1,56 @@
+<!-- Desktop view -->
+<nav class="desktop_menuDiv">
+    <ul class="desktop_menu">
+        <li class="desktop_menu_item">
+            <a routerLink="/">
+                <i class="fa fa-home mr-2"></i>Home
+            </a>
+        </li>
+        <li class="desktop_menu_item">
+            <a routerLink="/about-us" (click)="onClickScroll('index')">
+                <i class="fa fa-envelope mr-2"></i>About Us
+            </a>
+        </li>
+        <li class="desktop_menu_item dropdown"><i class="fa fa-list mr-2"></i> Categories
+            <ul class="sub_menu">
+                <li class="sub_menu_item text-left">Fruits</li>
+                <li class="sub_menu_item text-left">Vegetables</li>
+                <li class="sub_menu_item text-left">Oil</li>
+                <li class="sub_menu_item text-left">Nuts</li>
+            </ul>
+        </li>
+        <li class="desktop_menu_item">
+            <a routerLink="/contact-us">
+                <i class="fa fa-map-marker mr-2"></i>Contact Us
+            </a>
+        </li>    
+        <li class="desktop_menu_item"><i class="fa fa-user mr-2"></i>Login</li>
+    </ul>
+</nav>
+
+<!-- Mobile View -->
+
+<nav class="mobile_menuDiv">
+    <ul class="mobile_menu">
+        <li class="mobile_menu_item">
+            <a routerLink="/">
+                <i class="fa fa-home mr-2"></i>Home
+            </a>
+        </li>
+        <li class="mobile_menu_item">
+            <a routerLink="/about-us" (click)="onClickScroll('index')">
+                <i class="fa fa-envelope mr-2"></i>About Us
+            </a>
+        </li>
+        <li class="mobile_menu_item dropdown"><i class="fa fa-list mr-2"></i> Categories
+            <ul class="sub_menu">
+                <li class="sub_menu_item text-left">Fruits</li>
+                <li class="sub_menu_item text-left">Vegetables</li>
+                <li class="sub_menu_item text-left">Oil</li>
+                <li class="sub_menu_item text-left">Nuts</li>
+            </ul>
+        </li>
+        <li class="mobile_menu_item"><i class="fa fa-map-marker mr-2"></i>Contact Us</li>
+        <li class="mobile_menu_item"><i class="fa fa-user mr-2"></i>Login</li>
+    </ul>
+</nav>

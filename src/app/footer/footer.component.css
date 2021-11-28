@@ -1,0 +1,11 @@
+.footer{
+    height:250px;
+    margin-top:50px;
+    background: #0f5d6b;
+    border-bottom: 0 !important;
+    position: relative;
+    color: white;
+}
+.title,.about{
+   text-align: center;
+}
