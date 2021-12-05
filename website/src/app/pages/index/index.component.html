@@ -1,0 +1,21 @@
+<div class="product-template">
+
+    <div class="separator  mb-4">
+        <div class="line"></div>
+        <h2>Fruits Category</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="products"  [@productSlider]="state">
+        
+        <app-product></app-product>
+        <app-product></app-product>
+        <app-product></app-product>
+        <app-product></app-product>
+    </div>
+    
+    <div class="controls text-right mt-2  mb-4">
+        <button class="btn btn-sm btn-danger mr-2" (click)="prevProduct($event)">Prev</button>
+        <button class="btn btn-sm btn-danger" (click)="nextProduct($event)">Next</button>
+    </div>
+</div>

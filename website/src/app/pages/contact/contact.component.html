@@ -1,0 +1,47 @@
+<div class="contact">
+    <div class="separator mb-4">
+        <div class="line"></div>
+        <h2>Contact Us</h2>
+        <div class="line"></div>
+    </div>
+    <div class="addresses">
+        <div class="address" *ngFor="let contact of contacts">
+                <p class="line">
+                    {{contact.street}}
+                </p>
+                <p class="line">
+                    {{contact.city}}
+                </p>
+        </div>
+    </div>
+
+    <div class="comment mt-4">
+        <form class="w-75" (ngSubmit)="formSave($event)">
+            <h4 class="text-center mb-4">Feedback</h4>
+            <input type="text"
+                   ngModel name="name" #name="ngModel" (input)="validate(name)"
+                   id="name" [ngClass]="errors.name? 'border-danger form-control mb-2 mt-2' : 'form-control mb-2 mt-2'"
+                   placeholder="Enter Your Name"
+                   required minlength="2" maxlength="35" pattern="[A-Za-z\-\ ]*">
+            <span class="text-danger name-error mb-2" [@toggleError]="status.name">{{errors.name}}</span>
+            <input type="text"
+                   ngModel name="email" #email="ngModel" (input)="validate(email)"
+                   id="email" [ngClass]="errors.email? 'border-danger form-control mb-2 mt-2' : 'form-control mb-2 mt-2'"
+                   placeholder="Enter Your Email"
+                   required pattern="[a-z0-9._%+-]+[a-z0-9]+@[a-z0-9.-]+\.[a-z]{2,4}">
+            <span class="text-danger email-error mb-2" [@toggleError]="status.email">{{errors.email}}</span>
+            <textarea ngModel name="comment" #comment="ngModel" (input)="validate(comment)"
+                      cols="30" rows="10"
+                      [ngClass]="errors.comment? 'border-danger form-control mb-4 mt-2' : 'form-control mb-4 mt-2'" id="comment"
+                      placeholder="Place Your comment"
+                      required pattern="[a-zA-Z0-9 \-\&\$]*"></textarea>
+            <span class="text-danger comment-error" [@toggleError]="status.comment">{{errors.comment}}</span>
+            <button type="submit" id="submit"  class="btn btn-info form-control text-center">
+                    <div [ngClass]="btn_loader" [@spin]="loading"></div>
+                    <div [ngStyle]="btn_name ">Submit</div>
+            </button>
+            
+        </form>
+    </div>
+    
+</div>

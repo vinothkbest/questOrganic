@@ -1,0 +1,32 @@
+.addresses{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:40px
+}
+.address{
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(199, 138, 138, 0.23) 0px 3px 6px;
+    width: 100%;
+    height:200px;
+}
+.address > .line{
+    position: relative;
+    top:35%;
+    left:20%;
+}
+.comment{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(199, 138, 138, 0.23) 0px 3px 6px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#name, #email,#submit{
+ height :50px
+}
+@media only screen and (max-width: 768px) {
+    .addresses{
+        flex-direction: column;
+    }
+}
