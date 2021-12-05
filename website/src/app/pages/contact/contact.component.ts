@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { validationAnimate,loaderAnimate} from 'src/app/app-animation';
+import {ContactService} from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -25,7 +26,7 @@ export class ContactComponent{
     'font-weight' : 'bold'
   }
   loading:string="off"
-  constructor() {
+  constructor(private contact:ContactService) {
     this.contacts = [{
         street: "19A SanthaiPettai, Aniyapure",
         city : "Manapparai, Trichy 621307"
@@ -39,15 +40,16 @@ export class ContactComponent{
   formSave(e:any){
     const name:string = e.target.querySelector('#name').value
     const email:string = e.target.querySelector('#email').value
-    const comments:string = e.target.querySelector('#comment').value
+    const comment:string = e.target.querySelector('#comment').value
     if(!this.errors.name && !this.errors.email && !this.errors.comment
-        && name && comments && email){
+        && name && comment && email){
           this.btn_loader = "loader"
           this.btn_name.display = "none"
           this.loading="on"
-          let formData = {
-            name, email, comments
+          let formData:any = {
+            name, email, comment
           }
+          this.contact.save(formData)
           window.setTimeout(() => {
             this.loading="off"
             this.btn_loader = ""
@@ -56,9 +58,15 @@ export class ContactComponent{
     }
     else{
       this.status.name = this.status.email = this.status.comment = 'show'
-      this.errors.name ="Please enter the name"
-      this.errors.email= "Please enter the email"
-      this.errors.comment="Please enter the comment"
+      if(!name){
+        this.errors.name ="Please enter the name"
+      }
+      if(!email){
+        this.errors.email= "Please enter the email"
+      }
+      if(!comment){
+        this.errors.comment="Please enter the comment"
+      }
     }
   }
   validate(data:any){

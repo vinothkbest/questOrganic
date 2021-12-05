@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
+/**
+ * importing components  
+ */
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { BannerComponent } from './banner/banner.component';
@@ -12,6 +18,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ContactComponent } from './pages/contact/contact.component';
+
+/**
+ * importing services  
+ */
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +40,10 @@ import { ContactComponent } from './pages/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
